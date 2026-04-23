@@ -1,4 +1,4 @@
-# Onboarding Guide for Make A Website Showing All Products Of Nike Which Are Sold In Pakistan
+# Onboarding Guide for Clothing Brand Website
 
 ## Welcome
 This project is designed to help contributors quickly understand the repository and get started.
