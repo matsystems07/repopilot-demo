@@ -1,48 +1,49 @@
 # ONBOARDING.md
-## Welcome to the Student Expense Tracker Project
+## Welcome to the Travel Planner Website Project
 
-The Student Expense Tracker is an open-source project designed to help students manage their expenses effectively. Our goal is to create a user-friendly and feature-rich application that makes it easy for students to track their spending, create budgets, and set financial goals.
+The Travel Planner Website is an open-source project aimed at creating a comprehensive online platform for users to plan and organize their trips. Our goal is to provide a user-friendly and feature-rich website that makes travel planning easier and more enjoyable.
 
 ### What is the Project About?
 
-The Student Expense Tracker project aims to provide a comprehensive solution for students to manage their finances. The application will allow users to:
+The Travel Planner Website project involves designing, developing, and maintaining a web application that allows users to:
 
-* Track daily expenses
-* Create and manage budgets
-* Set financial goals
-* Generate reports and analytics
+* Search and book flights, hotels, and activities
+* Create and manage personalized itineraries
+* Access travel guides and recommendations
+* Share travel experiences and reviews
 
 ### Where to Start
 
 To get started with the project, follow these steps:
 
-1. **Familiarize yourself with the repository**: Take some time to explore the project's GitHub repository, including the issues, pull requests, and codebase.
-2. **Read the documentation**: Start with the files listed in the "Essential Reading" section below.
-3. **Join the community**: Introduce yourself in the project's discussion forum or chat channel, and get to know the other contributors and maintainers.
+1. **Familiarize yourself with the repository**: Browse through the project's GitHub repository to understand the directory structure and the different components of the project.
+2. **Read the documentation**: Start with the `README.md` file, which provides a high-level overview of the project, its features, and the technologies used.
+3. **Explore the issues**: Check the `issues` tab to see what tasks are currently open and what the community is working on.
 
-### Essential Reading
+### Which Files to Read First
 
-Before diving into the code, please read the following files:
+To get a deeper understanding of the project, read the following files:
 
-* `README.md`: This file provides an overview of the project, including its goals, features, and requirements.
-* `CONTRIBUTING.md`: This file outlines the contribution guidelines, including how to submit pull requests, report issues, and participate in discussions.
-* `CODE_OF_CONDUCT.md`: This file describes the project's code of conduct, which outlines the expected behavior and communication guidelines for contributors.
+* `README.md`: Provides an introduction to the project, its goals, and the technologies used.
+* `CONTRIBUTING.md`: Outlines the guidelines for contributing to the project, including code style, commit messages, and pull request procedures.
+* `docs/ARCHITECTURE.md`: Describes the overall architecture of the project, including the different components and how they interact with each other.
+* `docs/STYLE_GUIDE.md`: Defines the coding standards and best practices for the project.
 
-### Picking a Task
+### How to Pick a Task
 
-To get started with contributing to the project, follow these steps:
+To pick a task, follow these steps:
 
-1. **Explore the issue tracker**: Browse the project's issue tracker to find tasks that interest you and match your skills.
-2. **Filter by labels**: Use labels such as "good first issue" or "help wanted" to find tasks that are suitable for new contributors.
-3. **Claim an issue**: Once you've found a task you'd like to work on, comment on the issue to let others know you're interested in taking it on.
-4. **Create a new branch**: Create a new branch from the main branch to work on your task.
+1. **Check the issues**: Browse through the open issues and look for tasks that match your skills and interests.
+2. **Filter by labels**: Use the label filter to find issues that are suitable for beginners or have a specific priority level.
+3. **Comment on an issue**: If you find an issue you'd like to work on, comment on it to let the community know you're interested.
+4. **Assign yourself**: If the issue is available, assign it to yourself to start working on it.
 
-### Asking Questions
+### How to Ask Questions
 
 If you have any questions or need help with a task, don't hesitate to ask. You can:
 
-* **Comment on an issue**: If you have a question related to a specific issue, comment on the issue itself.
-* **Open a new issue**: If you have a general question or need help with something that's not related to a specific issue, open a new issue with a descriptive title and a clear explanation of your question.
-* **Join the discussion forum or chat channel**: Introduce yourself and ask your question in the project's discussion forum or chat channel.
+* **Create a new issue**: If you have a question or need help with a specific task, create a new issue and label it as a "question".
+* **Join the discussion**: Participate in the discussion on existing issues or pull requests to ask questions or provide feedback.
+* **Contact the maintainers**: If you need help with something that's not related to a specific issue, you can contact the project maintainers directly.
 
-Remember, the Student Expense Tracker project is a community-driven effort, and we're always happy to help new contributors get started. Welcome to the team!
+Remember, the Travel Planner Website project is a community-driven effort, and we're always happy to help new contributors get started. Welcome to the team!
