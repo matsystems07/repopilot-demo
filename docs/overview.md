@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Car Startup
+Student Expense Tracker
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'car startup'.
+A system to help launch and manage the open-source project 'student expense tracker'.
 
 ## Core Features
 - Project specification generation
