@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Student Expense Tracker
+Travel Planner Website
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'student expense tracker'.
+A system to help launch and manage the open-source project 'travel planner website'.
 
 ## Core Features
 - Project specification generation
