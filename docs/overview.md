@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Website Showing Honda Cars
+Car Startup
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'website showing honda cars'.
+A system to help launch and manage the open-source project 'car startup'.
 
 ## Core Features
 - Project specification generation
