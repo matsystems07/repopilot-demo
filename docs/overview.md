@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Travel Planner Website
+Restaurant Menu And Ordering Platform
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'travel planner website'.
+A system to help launch and manage the open-source project 'restaurant menu and ordering platform'.
 
 ## Core Features
 - Project specification generation
