@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Car Honda City Website Demonstrating All Cars And Thier Prices
+Website Showing Honda Cars
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'car honda city website demonstrating all cars and thier prices'.
+A system to help launch and manage the open-source project 'website showing honda cars'.
 
 ## Core Features
 - Project specification generation
