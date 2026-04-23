@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Restaurant Menu And Ordering Platform
+Make A Website Showing All Products Of Nike Which Are Sold In Pakistan
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'restaurant menu and ordering platform'.
+A system to help launch and manage the open-source project 'make a website showing all products of nike which are sold in pakistan'.
 
 ## Core Features
 - Project specification generation
