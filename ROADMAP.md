@@ -3,29 +3,29 @@
 The Website Showing Honda Cars project aims to create a comprehensive online platform for showcasing Honda cars. This roadmap outlines the short-term, medium-term, and long-term goals for the project, as well as opportunities for contributors to get involved.
 
 ## Short-term Goals (Next 4-6 weeks)
-1. **Scaffold Repository**: Set up the project repository with the necessary folder structure and initial files.
-2. **Generate Docs**: Create basic documentation for the project, including README.md, CONTRIBUTING.md, and LICENSE.
-3. **Create GitHub Issues**: Create initial GitHub issues to track tasks, bugs, and feature requests.
-4. **Review and Revise Outputs**: Review the initial repository setup, documentation, and issues, and revise as necessary to ensure everything is accurate and up-to-date.
+1. **Scaffold Repository**: Set up the project repository with the necessary folders and files to get started.
+2. **Generate Docs**: Create initial documentation for the project, including this ROADMAP.md, README.md, and CONTRIBUTING.md.
+3. **Create GitHub Issues**: Identify and create GitHub issues for the initial tasks and features to be implemented.
+4. **Review and Revise Outputs**: Review the initial documentation and repository setup, and revise as necessary to ensure clarity and consistency.
 
 ## Medium-term Goals (Next 3-6 months)
-1. **Design and Implement Database Schema**: Design and implement a database schema to store information about Honda cars, including models, features, and specifications.
-2. **Develop Front-end Interface**: Create a user-friendly front-end interface for the website, using a framework such as React or Angular.
-3. **Implement Data Retrieval and Display**: Implement functionality to retrieve data from the database and display it on the website.
-4. **Add Search and Filtering Functionality**: Add search and filtering functionality to the website, allowing users to easily find specific Honda car models.
+1. **Design and Implement Database**: Design and implement a database to store information about Honda cars, including models, features, and specifications.
+2. **Develop Frontend**: Develop a user-friendly frontend for the website using HTML, CSS, and JavaScript.
+3. **Implement Search and Filter Functionality**: Implement search and filter functionality to allow users to easily find specific Honda cars.
+4. **Add User Authentication**: Add user authentication to allow users to create accounts and save their favorite cars.
 
 ## Long-term Goals (Next 6-12 months)
-1. **Integrate with Honda API (if available)**: Integrate the website with the official Honda API (if available) to retrieve real-time data and updates.
-2. **Add User Authentication and Reviews**: Add user authentication and review functionality, allowing users to create accounts and leave reviews for Honda car models.
-3. **Implement Responsive Design**: Ensure the website is fully responsive and accessible on all devices, including desktops, laptops, tablets, and mobile phones.
-4. **Conduct Performance Optimization**: Conduct performance optimization to ensure the website loads quickly and efficiently.
+1. **Integrate with Honda API**: Integrate the website with the official Honda API to retrieve real-time data and updates.
+2. **Add Comparison Feature**: Add a feature to allow users to compare different Honda car models.
+3. **Implement Review and Rating System**: Implement a review and rating system to allow users to leave feedback about their experiences with Honda cars.
+4. **Optimize for Mobile and Accessibility**: Optimize the website for mobile devices and ensure accessibility for users with disabilities.
 
 ## Contributor Opportunities
-We welcome contributors to help with the development and maintenance of the Website Showing Honda Cars project. Opportunities include:
-* **Front-end Development**: Help with the development of the front-end interface, including designing and implementing new features.
-* **Back-end Development**: Assist with the development of the back-end, including designing and implementing the database schema and data retrieval functionality.
-* **Testing and Quality Assurance**: Help test the website and identify bugs and areas for improvement.
-* **Documentation and Writing**: Contribute to the project documentation, including writing and editing content for the README.md, CONTRIBUTING.md, and other documentation files.
-* **Design and User Experience**: Help with the design and user experience of the website, including creating wireframes, prototypes, and high-fidelity designs.
+We welcome contributors to help us achieve our goals. Here are some ways to get involved:
+1. **Documentation**: Help improve our documentation by reviewing and revising our docs.
+2. **Issue Triage**: Help triage GitHub issues and ensure that they are properly labeled and prioritized.
+3. **Code Contributions**: Contribute code to implement new features or fix bugs.
+4. **Design and UX**: Help improve the design and user experience of the website.
+5. **Testing and QA**: Help test the website and ensure that it is working as expected.
 
-To get started, please review the [CONTRIBUTING.md](CONTRIBUTING.md) file for information on how to contribute to the project. If you have any questions or would like to discuss a specific contribution, please open a GitHub issue or contact the project maintainers.
+To get started, please review our CONTRIBUTING.md document and submit a pull request or issue to introduce yourself and let us know how you'd like to contribute. We look forward to working with you!
