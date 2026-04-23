@@ -1,62 +1,58 @@
-# Contributing to Student Expense Tracker
-The Student Expense Tracker is an open-source project that aims to help students manage their expenses effectively. We welcome contributions from the community to make this project better. Here's a guide on how to contribute to the project.
+# Contributing to Travel Planner Website
+The Travel Planner Website is an open-source project that aims to provide a comprehensive platform for generating project specifications, repository scaffolding, documentation drafting, and GitHub workflow setup. We welcome contributions from the community to help improve and expand the project.
 
 ## Getting Started
-To contribute to the project, you'll need to fork and clone the repository. Here are the steps:
+To contribute to the Travel Planner Website, follow these steps:
 
-1. **Fork the repository**: Go to the [Student Expense Tracker repository](https://github.com/your-username/Student-Expense-Tracker) and click the "Fork" button in the top-right corner.
-2. **Clone the repository**: Run the following command in your terminal:
-   ```bash
-git clone https://github.com/your-username/Student-Expense-Tracker.git
-```
-3. **Navigate to the repository**: Run the following command:
-   ```bash
-cd Student-Expense-Tracker
-```
-4. **Add the upstream repository**: Run the following command:
-   ```bash
-git remote add upstream https://github.com/original-username/Student-Expense-Tracker.git
-```
+1. **Fork the repository**: Go to the [Travel Planner Website repository](https://github.com/your-username/travel-planner-website) and click the "Fork" button in the top-right corner. This will create a copy of the repository in your own GitHub account.
+2. **Clone the repository**: Run the command `git clone https://github.com/your-username/travel-planner-website.git` to download a copy of the repository to your local machine.
+3. **Install dependencies**: Run the command `npm install` or `yarn install` to install the required dependencies.
 
 ## Branching
-When making changes, create a new branch from the `main` branch. Use the following naming convention for your branch:
+When making changes to the codebase, create a new branch to work on. Branch names should follow the format:
 
-* `feature/your-feature-name` for new features
-* `fix/your-fix-name` for bug fixes
-* `docs/your-docs-name` for documentation changes
-* `refactor/your-refactor-name` for code refactoring
+`type/description`
 
-Example:
-```bash
-git checkout -b feature/add-expense-category
-```
+* `type` can be one of:
+	+ `feature` for new features
+	+ `fix` for bug fixes
+	+ `docs` for documentation changes
+	+ `style` for code style changes
+	+ `refactor` for code refactoring
+	+ `test` for test additions or changes
+	+ `chore` for miscellaneous changes
+* `description` should be a brief summary of the changes made in the branch
+
+Example: `feature/add-project-specification-generation`
 
 ## Pull Requests
-When you're ready to submit your changes, create a pull request against the `main` branch. Here are some expectations:
+When you're ready to submit your changes, create a pull request against the `main` branch. Please ensure that your pull request:
 
-* **Clear and concise title**: Use a descriptive title that summarizes the changes.
-* **Detailed description**: Provide a detailed description of the changes, including any relevant context or explanations.
-* **Related issues**: If your pull request fixes an issue, include the issue number in the description.
-* **Code formatting**: Ensure that your code is formatted consistently with the rest of the project.
+* Has a clear and concise title
+* Includes a detailed description of the changes made
+* References any related issues or pull requests
+* Passes all automated tests and checks
+* Is reviewed by at least one maintainer before being merged
 
 ## Code Style
-We follow standard professional guidelines for code style. Here are some key points:
+The Travel Planner Website follows standard JavaScript and HTML/CSS coding conventions. Please ensure that your code:
 
-* **Indentation**: Use 4 spaces for indentation.
-* **Line length**: Keep lines under 80 characters.
-* **Variable naming**: Use descriptive and concise variable names.
-* **Function naming**: Use descriptive and concise function names.
+* Uses consistent indentation (2 spaces)
+* Has proper spacing between lines and blocks
+* Uses descriptive variable and function names
+* Follows the project's existing coding style
 
 ## Issue Reporting
-If you find a bug or have a feature request, please create an issue on the [issue tracker](https://github.com/your-username/Student-Expense-Tracker/issues). Here are some guidelines:
+If you encounter any issues or bugs while using the Travel Planner Website, please report them on the [issue tracker](https://github.com/your-username/travel-planner-website/issues). When reporting an issue, please:
 
-* **Clear and concise title**: Use a descriptive title that summarizes the issue.
-* **Detailed description**: Provide a detailed description of the issue, including any relevant context or explanations.
-* **Steps to reproduce**: Provide steps to reproduce the issue, if applicable.
-* **Expected behavior**: Describe the expected behavior.
+* Provide a clear and concise title
+* Include a detailed description of the issue
+* Provide steps to reproduce the issue
+* Include any relevant error messages or logs
+* Specify the version of the Travel Planner Website being used
 
 ## Commit Messages
-When committing changes, use the following format for your commit message:
+When committing changes, please follow the standard commit message format:
 
 `type: brief description`
 
@@ -64,13 +60,12 @@ When committing changes, use the following format for your commit message:
 	+ `feat` for new features
 	+ `fix` for bug fixes
 	+ `docs` for documentation changes
+	+ `style` for code style changes
 	+ `refactor` for code refactoring
 	+ `test` for test additions or changes
 	+ `chore` for miscellaneous changes
+* `brief description` should be a short summary of the changes made
 
-Example:
-```bash
-git commit -m "feat: add expense category feature"
-```
+Example: `feat: add project specification generation`
 
-By following these guidelines, you'll be helping us maintain a high-quality and consistent codebase. Thank you for contributing to the Student Expense Tracker!
+By following these guidelines, you can help ensure that your contributions are properly reviewed and integrated into the Travel Planner Website. Thank you for your contributions!
