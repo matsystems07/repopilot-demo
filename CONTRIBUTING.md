@@ -1,4 +1,4 @@
-# Contributing to Make A Website Showing All Products Of Nike Which Are Sold In Pakistan
+# Contributing to Clothing Brand Website
 
 Thank you for your interest in contributing.
 
