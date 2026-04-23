@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Make A Website Showing All Products Of Nike Which Are Sold In Pakistan
+Clothing Brand Website
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'make a website showing all products of nike which are sold in pakistan'.
+A system to help launch and manage the open-source project 'clothing brand website'.
 
 ## Core Features
 - Project specification generation
