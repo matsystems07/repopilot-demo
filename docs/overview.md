@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Shoe Shop
+Clothes Website
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'shoe shop'.
+A system to help launch and manage the open-source project 'clothes website'.
 
 ## Core Features
 - Project specification generation
