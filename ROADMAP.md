@@ -1,8 +1,8 @@
-# Mobile Phone Website Product Roadmap
+# Timeout 30 Product Roadmap
 
 ## 🎯 Vision & Mission
 
-**Vision**: A system to help launch and manage the open-source project 'mobile phone website'.
+**Vision**: A system to help launch and manage the open-source project 'timeout 30'.
 
 **Mission**: Deliver a robust, scalable solution that meets the needs of developers, maintainers, contributors while maintaining high standards of code quality and community engagement.
 
@@ -169,6 +169,6 @@
 
 ## 🙏 Acknowledgments
 
-This roadmap represents our vision for Mobile Phone Website. We welcome feedback and contributions from the community to help us achieve these goals. Together, we can build something amazing!
+This roadmap represents our vision for Timeout 30. We welcome feedback and contributions from the community to help us achieve these goals. Together, we can build something amazing!
 
 Last updated: 2026-04-24
