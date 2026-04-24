@@ -1,8 +1,8 @@
-# Mobile Phone Website
+# Timeout 30
 
 ## 🎯 Overview
 
-A system to help launch and manage the open-source project 'mobile phone website'.
+A system to help launch and manage the open-source project 'timeout 30'.
 
 This project addresses key challenges in developers, maintainers, contributors by providing a comprehensive solution with enterprise-grade features and developer-friendly tooling.
 
@@ -51,7 +51,7 @@ This project addresses key challenges in developers, maintainers, contributors b
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd mobile-phone-website
+cd timeout-30
 
 # Create virtual environment
 python -m venv venv
@@ -64,10 +64,10 @@ pip install -r requirements.txt
 ### Basic Usage
 
 ```python
-from mobile_phone_website import MobilePhoneWebsiteApp
+from timeout_30 import Timeout30App
 
 # Initialize the application
-app = MobilePhoneWebsiteApp()
+app = Timeout30App()
 
 # Run the application
 app.run()
@@ -79,7 +79,7 @@ Create a `.env` file in the project root:
 
 ```env
 # Application Settings
-APP_NAME=Mobile Phone Website
+APP_NAME=Timeout 30
 APP_VERSION=1.0.0
 DEBUG=true
 
@@ -95,7 +95,7 @@ API_KEY=your-api-key-here
 ### Basic Operations
 ```python
 # Example: Core feature demonstration
-app = MobilePhoneWebsiteApp()
+app = Timeout30App()
 app.initialize()
 app.demonstrate_features()
 ```
