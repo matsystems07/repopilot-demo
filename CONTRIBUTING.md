@@ -1,52 +1,339 @@
-# CONTRIBUTING.md
-## Introduction
-Thank you for considering contributing to the Mobile Phone Website project. This document outlines the guidelines and expectations for contributing to our open-source project. By following these guidelines, you will help us maintain a high-quality codebase and ensure a smooth collaboration experience.
+# Contributing to Timeout 30
 
-## Getting Started
-To start contributing, follow these steps:
+Thank you for your interest in contributing to **Timeout 30**! 🎉
 
-1. **Fork the repository**: Go to the [Mobile Phone Website](https://github.com/your-username/Mobile-Phone-Website) repository on GitHub and click the "Fork" button to create a copy of the repository in your own account.
-2. **Clone the repository**: Run the command `git clone https://github.com/your-username/Mobile-Phone-Website.git` to download a copy of the repository to your local machine.
-3. **Create a new branch**: Create a new branch for your feature or bug fix using the command `git checkout -b feature/your-feature-name` or `git checkout -b fix/your-fix-name`. See the [Branch Naming](#branch-naming) section for more information.
+We welcome contributions from developers of all skill levels and backgrounds. This document provides guidelines and information to help you get started with contributing to our project.
 
-## Branch Naming
-When creating a new branch, please use the following naming conventions:
+## 📋 Table of Contents
 
-* **Feature branches**: Use the prefix `feature/` followed by a descriptive name, e.g., `feature/project-specification-generation`.
-* **Fix branches**: Use the prefix `fix/` followed by a descriptive name, e.g., `fix/repository-scaffolding-issue`.
-* **Documentation branches**: Use the prefix `docs/` followed by a descriptive name, e.g., `docs/documentation-drafting`.
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Development Workflow](#development-workflow)
+- [Code Standards](#code-standards)
+- [Testing](#testing)
+- [Documentation](#documentation)
+- [Issue Reporting](#issue-reporting)
+- [Pull Request Process](#pull-request-process)
+- [Community](#community)
 
-## Pull Request Expectations
-When submitting a pull request, please ensure that:
+## 🤝 Code of Conduct
 
-* Your code is formatted according to our [Code Style Expectations](#code-style-expectations).
-* Your pull request includes a clear and concise description of the changes made.
-* Your pull request includes relevant screenshots or examples, if applicable.
-* Your pull request is targeted at the correct branch (usually `main` or `dev`).
+This project follows a code of conduct to ensure a welcoming environment for all contributors. By participating, you agree to:
 
-## Code Style Expectations
-To maintain a consistent codebase, please adhere to the following code style guidelines:
+- Be respectful and inclusive
+- Focus on constructive feedback
+- Accept responsibility for mistakes
+- Show empathy towards other community members
+- Help create a positive environment
 
-* Use a consistent naming convention (e.g., camelCase or underscore notation).
-* Use indentation with 4 spaces.
-* Keep lines to a maximum of 80 characters.
-* Use comments to explain complex logic or algorithms.
-* Follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) for JavaScript code.
+## 🚀 Getting Started
 
-## Issue Reporting Guidance
-When reporting an issue, please provide the following information:
+### Prerequisites
 
-* A clear and concise description of the issue.
-* Relevant screenshots or examples.
-* Steps to reproduce the issue, if applicable.
-* Your environment and setup (e.g., operating system, browser, etc.).
-* Any error messages or logs, if applicable.
+Before you begin, ensure you have the following installed:
+- Python 3.8 or higher
+- Git
+- A code editor (VS Code, PyCharm, etc.)
 
-You can report issues by creating a new issue on the [Mobile Phone Website](https://github.com/your-username/Mobile-Phone-Website/issues) repository.
+### Fork and Clone
 
-## Additional Tips
-* Be respectful and considerate in your interactions with other contributors.
-* Keep your pull requests and issues up-to-date and well-maintained.
-* If you're unsure about something, don't hesitate to ask.
+1. Fork this repository on GitHub
+2. Clone your fork locally:
 
-Thank you for your contributions to the Mobile Phone Website project!
+```bash
+git clone https://github.com/your-username/timeout-30.git
+cd timeout-30
+```
+
+3. Set up the development environment:
+
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install development dependencies
+pip install -r requirements-dev.txt
+```
+
+## 🔄 Development Workflow
+
+### 1. Choose an Issue
+
+- Check [GitHub Issues](https://github.com/username/timeout-30/issues) for open tasks
+- Look for issues labeled `good first issue` or `help wanted`
+- Comment on the issue to indicate you're working on it
+
+### 2. Create a Branch
+
+```bash
+# Create and switch to a new branch
+git checkout -b feature/your-feature-name
+# or
+git checkout -b fix/issue-number-description
+```
+
+### Branch Naming Convention
+
+- `feature/description`: New features
+- `fix/description`: Bug fixes
+- `docs/description`: Documentation updates
+- `refactor/description`: Code refactoring
+- `test/description`: Testing improvements
+
+### 3. Make Changes
+
+- Write clear, focused commits
+- Test your changes thoroughly
+- Follow the code standards below
+- Update documentation as needed
+
+### 4. Test Your Changes
+
+```bash
+# Run all tests
+python -m pytest
+
+# Run tests with coverage
+python -m pytest --cov=src --cov-report=html
+
+# Run specific tests
+python -m pytest tests/test_specific_feature.py
+
+# Run linting
+flake8 src/
+black --check src/
+```
+
+### 5. Commit Your Changes
+
+```bash
+# Stage your changes
+git add .
+
+# Commit with a clear message
+git commit -m "feat: add user authentication feature
+
+- Implement login/logout functionality
+- Add password hashing
+- Create user session management
+- Add input validation
+
+Closes #123"
+```
+
+### 6. Push and Create Pull Request
+
+```bash
+# Push your branch
+git push origin feature/your-feature-name
+
+# Create a Pull Request on GitHub
+# - Use a clear title
+# - Provide detailed description
+# - Link related issues
+# - Request review from maintainers
+```
+
+## 📏 Code Standards
+
+### Python Style
+
+We follow [PEP 8](https://pep8.org/) with some additional guidelines:
+
+```python
+# ✅ Good
+def calculate_total(items: List[Dict[str, float]]) -> float:
+    """Calculate total price of items."""
+    return sum(item["price"] * item.get("quantity", 1) for item in items)
+
+# ❌ Avoid
+def calculate_total(items):
+    total = 0
+    for item in items:
+        total += item['price'] * item.get('quantity', 1)
+    return total
+```
+
+### Key Guidelines
+
+- **Type Hints**: Use type hints for function parameters and return values
+- **Docstrings**: Write comprehensive docstrings using Google style
+- **Naming**: Use descriptive names (variables, functions, classes)
+- **Imports**: Group imports (standard library, third-party, local)
+- **Line Length**: Keep lines under 88 characters (Black formatter default)
+- **Error Handling**: Use specific exceptions, not bare `except:`
+
+### Code Formatting
+
+We use automated formatters to maintain consistency:
+
+```bash
+# Format code
+black .
+
+# Sort imports
+isort .
+
+# Check style
+flake8 .
+```
+
+### Pre-commit Hooks
+
+Install pre-commit hooks to automatically check code quality:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+## 🧪 Testing
+
+### Test Structure
+
+```
+tests/
+├── unit/                 # Unit tests
+├── integration/         # Integration tests
+├── e2e/                 # End-to-end tests
+├── fixtures/            # Test data
+└── conftest.py         # Test configuration
+```
+
+### Writing Tests
+
+```python
+import pytest
+from src.your_module import YourClass
+
+class TestYourClass:
+    def test_initialization(self):
+        """Test class initialization."""
+        obj = YourClass()
+        assert obj.is_initialized
+
+    def test_core_functionality(self):
+        """Test main functionality."""
+        obj = YourClass()
+        result = obj.process_data(test_data)
+        assert result is not None
+        assert len(result) > 0
+
+    @pytest.mark.parametrize("input_data,expected", [
+        ({{"key": "value"}}, True),
+        ({}, False),
+    ])
+    def test_edge_cases(self, input_data, expected):
+        """Test edge cases with parametrized inputs."""
+        obj = YourClass()
+        assert obj.validate(input_data) == expected
+```
+
+### Test Coverage
+
+Maintain test coverage above 80%:
+
+```bash
+# Generate coverage report
+pytest --cov=src --cov-report=html
+
+# View report in browser
+open htmlcov/index.html
+```
+
+## 📚 Documentation
+
+### Code Documentation
+
+- Use docstrings for all public functions, classes, and modules
+- Include parameter descriptions and return value information
+- Provide usage examples where helpful
+
+### Project Documentation
+
+- Keep README.md up to date
+- Update docs/ for major features
+- Include API documentation for web services
+- Maintain changelog for releases
+
+## 🐛 Issue Reporting
+
+### Bug Reports
+
+When reporting bugs, please include:
+
+- **Clear Title**: Summarize the issue
+- **Steps to Reproduce**: Numbered steps to reproduce the bug
+- **Expected Behavior**: What should happen
+- **Actual Behavior**: What actually happens
+- **Environment**: OS, Python version, dependencies
+- **Screenshots/Logs**: If applicable
+
+### Feature Requests
+
+For new features, please provide:
+
+- **Use Case**: Why is this feature needed?
+- **Proposed Solution**: How should it work?
+- **Alternatives**: Other approaches considered
+- **Additional Context**: Screenshots, examples, etc.
+
+## 🔄 Pull Request Process
+
+### PR Checklist
+
+- [ ] Tests pass locally
+- [ ] Code follows style guidelines
+- [ ] Documentation updated
+- [ ] Commit messages are clear
+- [ ] PR description explains changes
+- [ ] Related issues linked
+
+### Review Process
+
+1. **Automated Checks**: CI/CD runs tests and linting
+2. **Code Review**: Maintainers review code quality and logic
+3. **Testing**: Additional testing may be requested
+4. **Approval**: PR approved and merged
+5. **Deployment**: Changes deployed to production
+
+### PR Template
+
+Please use this template for pull requests:
+
+```markdown
+## Description
+Brief description of the changes made.
+
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
+
+## Testing
+Describe the tests you ran and how to reproduce.
+
+## Checklist
+- [ ] Tests pass
+- [ ] Documentation updated
+- [ ] Code follows style guidelines
+```
+
+## 🌟 Community
+
+### Communication Channels
+
+- **GitHub Issues**: For bug reports and feature requests
+- **GitHub Discussions**: For general questions and community discussion
+- **Pull Requests**: For code contributions
+
+### Recognition
+
+Contributors are recognized in our README.md and at project events. We believe in celebrating all contributions, big and small!
+
+Thank you for contributing to Timeout 30! 🚀
