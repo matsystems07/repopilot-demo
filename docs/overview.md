@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Mobile Phone Website
+Timeout 30
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'mobile phone website'.
+A system to help launch and manage the open-source project 'timeout 30'.
 
 ## Core Features
 - Project specification generation
