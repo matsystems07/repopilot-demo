@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Python Main.Py
+Mobile Phone Website
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'python main.py'.
+A system to help launch and manage the open-source project 'mobile phone website'.
 
 ## Core Features
 - Project specification generation
