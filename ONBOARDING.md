@@ -1,14 +1,14 @@
-# Welcome to Mobile Phone Website! 🎉
+# Welcome to Timeout 30! 🎉
 
-Welcome to the Mobile Phone Website project! This guide will help you get started as a contributor. Whether you're a seasoned developer or just getting started with open-source, we're excited to have you here.
+Welcome to the Timeout 30 project! This guide will help you get started as a contributor. Whether you're a seasoned developer or just getting started with open-source, we're excited to have you here.
 
 ## 🚀 Quick Start
 
-### What is Mobile Phone Website?
+### What is Timeout 30?
 
-A system to help launch and manage the open-source project 'mobile phone website'.
+A system to help launch and manage the open-source project 'timeout 30'.
 
-Mobile Phone Website provides Project specification generation, Repository scaffolding, Documentation drafting, GitHub workflow setup to help developers, maintainers, contributors build better software.
+Timeout 30 provides Project specification generation, Repository scaffolding, Documentation drafting, GitHub workflow setup to help developers, maintainers, contributors build better software.
 
 ### Prerequisites
 
@@ -25,8 +25,8 @@ Before you begin, make sure you have:
 ```bash
 # Fork the repository on GitHub
 # Then clone your fork
-git clone https://github.com/your-username/mobile-phone-website.git
-cd mobile-phone-website
+git clone https://github.com/your-username/timeout-30.git
+cd timeout-30
 ```
 
 ### 2. Set Up Development Environment
@@ -75,7 +75,7 @@ pre-commit run --all-files
 
 ### Step 1: Find an Issue
 
-1. Visit our [GitHub Issues](https://github.com/username/mobile-phone-website/issues)
+1. Visit our [GitHub Issues](https://github.com/username/timeout-30/issues)
 2. Look for issues labeled `good first issue` or `help wanted`
 3. Comment on the issue to let others know you're working on it
 
@@ -137,7 +137,7 @@ git push origin feature/your-feature-name
 ### Codebase Overview
 
 ```
-mobile-phone-website/
+timeout-30/
 ├── src/                    # Main source code
 ├── tests/                  # Test files
 ├── docs/                   # Documentation
@@ -232,7 +232,7 @@ Your contributions matter! Here's how we recognize contributors:
 
 ## 🙏 Thank You
 
-Thank you for your interest in contributing to Mobile Phone Website! Your contributions help make this project better for everyone. We appreciate your time and effort.
+Thank you for your interest in contributing to Timeout 30! Your contributions help make this project better for everyone. We appreciate your time and effort.
 
 If you have any questions or need help, don't hesitate to ask. We're here to support you! 🚀
 
