@@ -1,63 +1,60 @@
-# Contributing to Shoe Shop
-Thank you for considering contributing to the Shoe Shop project. This document outlines the guidelines and expectations for contributing to our open-source project.
+# CONTRIBUTING.md
+## Introduction
+Thank you for considering contributing to the Clothes Website project. This document outlines the guidelines and expectations for contributing to our project. By following these guidelines, you'll be able to help us build a high-quality, maintainable, and scalable project.
 
 ## Getting Started
-To start contributing, you'll need to fork and clone the repository. Here's a step-by-step guide:
+To start contributing, follow these steps:
 
-1. **Fork the repository**: Go to the [Shoe Shop repository](https://github.com/your-username/Shoe-Shop) and click the "Fork" button in the top-right corner.
-2. **Clone the repository**: Run the following command in your terminal, replacing `your-username` with your actual GitHub username:
-   ```bash
-git clone https://github.com/your-username/Shoe-Shop.git
-```
-3. **Navigate to the repository**: Change into the cloned repository:
-   ```bash
-cd Shoe-Shop
-```
+1. **Fork the repository**: Go to the [Clothes Website repository](https://github.com/your-username/clothes-website) and click the "Fork" button in the top-right corner. This will create a copy of the repository in your own GitHub account.
+2. **Clone the repository**: Run the command `git clone https://github.com/your-username/clothes-website.git` to download a copy of the repository to your local machine.
+3. **Install dependencies**: Run the command `npm install` or `yarn install` to install the required dependencies.
 
 ## Branching
-When making changes, create a new branch to work on. Our branch naming convention is as follows:
+When working on a new feature or bug fix, create a new branch from the `main` branch. Use the following naming convention for your branch:
 
-* **Feature branches**: `feature/your-feature-name` (e.g., `feature/project-specification-generation`)
-* **Bug fix branches**: `fix/your-bug-fix-name` (e.g., `fix/repository-scaffolding-issue`)
-* **Documentation branches**: `docs/your-documentation-change` (e.g., `docs/update-readme-file`)
-
-Create a new branch using the following command:
-```bash
-git checkout -b your-branch-name
-```
+* `feature/your-feature-name` for new features
+* `fix/your-bug-fix-name` for bug fixes
+* `docs/your-documentation-change` for documentation changes
+* `chore/your-chore-name` for miscellaneous changes
 
 ## Pull Requests
-When you're ready to submit your changes, create a pull request. Here's what we expect:
+When you're ready to submit your changes, create a pull request against the `main` branch. Here are some expectations for pull requests:
 
-* **Clear and concise title**: Describe the changes you've made in a few words.
-* **Detailed description**: Explain the changes, including any relevant context or motivations.
-* **Related issues**: If your pull request fixes an issue, include the issue number in the description (e.g., "Fixes #123").
-* **Code changes**: Keep code changes focused and minimal. Avoid unnecessary changes or refactorings.
+* **Clear and concise title**: Use a descriptive title that summarizes the changes made in the pull request.
+* **Detailed description**: Provide a detailed description of the changes made, including any relevant context or explanations.
+* **Related issues**: If the pull request fixes a specific issue, include a reference to the issue number in the description.
+* **Code formatting**: Ensure that the code is formatted consistently and adheres to our code style expectations (see below).
+* **Testing**: Include tests for any new functionality or bug fixes.
 
-To create a pull request:
+## Code Style Expectations
+We follow standard JavaScript and HTML/CSS coding conventions. Here are some specific guidelines:
 
-1. **Commit your changes**: Run `git add .` and `git commit -m "your-commit-message"` to commit your changes.
-2. **Push your changes**: Run `git push origin your-branch-name` to push your changes to your fork.
-3. **Create a pull request**: Go to the [Shoe Shop repository](https://github.com/your-username/Shoe-Shop) and click the "New pull request" button.
-
-## Code Style
-We follow standard professional guidelines for code style:
-
-* **Indentation**: Use 4 spaces for indentation.
-* **Line length**: Keep lines under 80 characters.
-* **Comments**: Use clear and concise comments to explain complex code.
-* **Code formatting**: Use a consistent code formatting style throughout the project.
+* **Indentation**: Use 2 spaces for indentation.
+* **Line length**: Keep lines to a maximum of 80 characters.
+* **Variable naming**: Use camelCase for variable names.
+* **Function naming**: Use PascalCase for function names.
+* **Code organization**: Keep related code organized into logical modules or files.
 
 ## Issue Reporting
-If you encounter an issue or have a feature request, please report it using our issue tracker. Here's how:
+If you encounter a bug or have a feature request, please create an issue in our [issue tracker](https://github.com/your-username/clothes-website/issues). Here are some guidelines for issue reporting:
 
-* **Clear and concise title**: Describe the issue or feature request in a few words.
-* **Detailed description**: Explain the issue or feature request, including any relevant context or steps to reproduce.
-* **Related code**: If the issue is related to specific code, include the file name and line numbers.
+* **Clear and concise title**: Use a descriptive title that summarizes the issue or feature request.
+* **Detailed description**: Provide a detailed description of the issue or feature request, including any relevant context or explanations.
+* **Reproduction steps**: If the issue is a bug, provide step-by-step instructions for reproducing the issue.
+* **Expected behavior**: Describe the expected behavior or outcome.
+* **Actual behavior**: Describe the actual behavior or outcome.
 
-To report an issue:
+## Core Features
+The Clothes Website project has the following core features:
+* **Project specification generation**: The project includes a feature to generate project specifications.
+* **Repository scaffolding**: The project includes a feature to scaffold a repository.
+* **Documentation drafting**: The project includes a feature to draft documentation.
+* **GitHub workflow setup**: The project includes a feature to set up a GitHub workflow.
 
-1. **Go to the issue tracker**: Navigate to the [Shoe Shop issue tracker](https://github.com/your-username/Shoe-Shop/issues).
-2. **Click the "New issue" button**: Fill in the title and description, and click the "Submit new issue" button.
+## Additional Resources
+For more information on contributing to the Clothes Website project, please see our [README.md](README.md) file.
 
-Thank you for taking the time to contribute to the Shoe Shop project. Your contributions will help make our project better for everyone.
+## License
+By contributing to the Clothes Website project, you agree to license your contributions under the [MIT License](LICENSE).
+
+Thank you for your contributions to the Clothes Website project!
