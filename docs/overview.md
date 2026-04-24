@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Clothes Website
+Car Website
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'clothes website'.
+A system to help launch and manage the open-source project 'car website'.
 
 ## Core Features
 - Project specification generation
