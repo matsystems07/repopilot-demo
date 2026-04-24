@@ -3,8 +3,8 @@ from typing import List, Dict, Optional
 import json
 from datetime import datetime
 
-class MobilePhoneWebsiteApp:
-    """Mobile Phone Website - A system to help launch and manage the open-source project 'mobile phone website'.
+class Timeout30App:
+    """Timeout 30 - A system to help launch and manage the open-source project 'timeout 30'.
 
     Core Features:
     - Project specification generation
@@ -19,7 +19,7 @@ class MobilePhoneWebsiteApp:
     """
 
     def __init__(self):
-        self.project_name = "Mobile Phone Website"
+        self.project_name = "Timeout 30"
         self.version = "1.0.0"
         self.core_features = ['Project specification generation', 'Repository scaffolding', 'Documentation drafting', 'GitHub workflow setup']
         self.target_users = ['developers', 'maintainers', 'contributors']
@@ -37,7 +37,7 @@ class MobilePhoneWebsiteApp:
         print(f"\n==================================================")
         print(f"Welcome to {self.project_name}!")
         print(f"==================================================")
-        print(f"\nProblem Solved: A system to help launch and manage the open-source project 'mobile phone website'.")
+        print(f"\nProblem Solved: A system to help launch and manage the open-source project 'timeout 30'.")
         print(f"\nCore Features:")
         for feature in self.core_features:
             print(f"  ✓ {feature}")
@@ -167,7 +167,7 @@ class MobilePhoneWebsiteApp:
 
 def main():
     """Main entry point"""
-    app = MobilePhoneWebsiteApp()
+    app = Timeout30App()
     app.run()
 
 if __name__ == "__main__":
