@@ -1,50 +1,33 @@
 # ONBOARDING.md
-## Welcome to the Car Company Website Project
+## Welcome to Shoe Shop
+The Shoe Shop project is an open-source initiative aimed at creating a comprehensive e-commerce platform for shoe retailers. Our goal is to provide a scalable, maintainable, and user-friendly solution for online shoe stores.
 
-The Car Company Website is an open-source project aimed at creating a modern, responsive, and user-friendly website for a fictional car company. Our goal is to provide a comprehensive online platform for car enthusiasts and customers to explore and learn about the company's products and services.
+### What is the Project About
+The Shoe Shop project focuses on developing a robust and feature-rich platform that enables retailers to manage their online presence, inventory, and sales efficiently. The project is built using [list technologies, e.g., Python, Django, React], and we follow best practices for coding, testing, and documentation.
 
-### What is the Project About?
-
-The project involves designing and developing a website with the following features:
-
-* Responsive design for various devices and screen sizes
-* User-friendly navigation and interface
-* Detailed product information and specifications
-* News and blog section for company updates and industry insights
-* Contact and inquiry form for customers
-
-### Where to Start
-
+## Getting Started
 To get started with the project, follow these steps:
 
-1. **Familiarize yourself with the repository**: Browse through the project's GitHub repository to understand the directory structure and the different components of the project.
-2. **Read the README.md file**: The README.md file contains essential information about the project, including its purpose, features, and requirements.
-3. **Explore the project's issues**: Check the project's issue tracker to see what tasks are currently open and what needs to be done.
+1. **Familiarize yourself with the project structure**: Browse through the repository to understand the organization of the codebase.
+2. **Read the documentation**: Start with the files listed below to gain a deeper understanding of the project:
+	* `README.md`: Introduction to the project, its goals, and requirements.
+	* `CONTRIBUTING.md`: Guidelines for contributing to the project, including coding standards and commit messages.
+	* `docs/architecture.md`: Overview of the project's architecture and technical design.
+3. **Explore the issue tracker**: Visit the [Issues](https://github.com/[username]/Shoe-Shop/issues) page to see the current tasks, bugs, and feature requests.
 
-### Which Files to Read First
-
-To get a better understanding of the project, start by reading the following files:
-
-* **README.md**: Provides an overview of the project, its features, and requirements.
-* **CONTRIBUTING.md**: Outlines the guidelines and best practices for contributing to the project.
-* **docs/requirements.md**: Lists the technical requirements and dependencies for the project.
-* **docs/architecture.md**: Describes the project's architecture and technical design.
-
-### How to Pick a Task
-
+## Picking a Task
 To pick a task, follow these steps:
 
-1. **Check the issue tracker**: Browse through the project's issue tracker to find open issues that match your skills and interests.
-2. **Filter by labels**: Use labels to filter issues by type, priority, or difficulty level.
-3. **Comment on an issue**: If you're interested in working on an issue, comment on it to let others know and ask any questions you may have.
-4. **Assign yourself to the issue**: Once you've discussed the issue with the maintainers, assign yourself to it and start working on it.
+1. **Browse the issue tracker**: Look for issues labeled as "good first issue" or "help wanted" to find tasks suitable for new contributors.
+2. **Filter by label**: Use labels like "bug", "feature", or "documentation" to find tasks that match your interests and skills.
+3. **Comment on the issue**: If you're interested in working on a task, comment on the issue to let the maintainers know.
+4. **Assign yourself**: If the maintainers approve, assign yourself to the issue to start working on it.
 
-### How to Ask Questions
+## Asking Questions
+If you have any questions or need help with a task, don't hesitate to ask:
 
-If you have any questions or need help with a task, don't hesitate to ask. You can:
+1. **Create a new issue**: If you have a question or problem related to a specific task, create a new issue and label it as "question".
+2. **Join the discussion**: Participate in discussions on existing issues or pull requests to clarify doubts or provide feedback.
+3. **Contact the maintainers**: If you need help with something that's not related to a specific issue, you can contact the maintainers directly via [email](mailto:[maintainer-email]) or [GitHub discussions](https://github.com/[username]/Shoe-Shop/discussions).
 
-* **Create a new issue**: If you have a question or problem that's not related to an existing issue, create a new issue and describe your question or problem.
-* **Comment on an existing issue**: If your question is related to an existing issue, comment on that issue and ask your question.
-* **Join our community chat**: We have a community chat channel where you can ask questions and get help from other contributors and maintainers.
-
-Remember, we're a friendly and inclusive community, and we're happy to help you get started with the project. Welcome aboard!
+Remember, we're a community-driven project, and we're here to help you get started. Welcome to the Shoe Shop team!
