@@ -1,60 +1,73 @@
-# CONTRIBUTING.md
-## Introduction
-Thank you for considering contributing to the Clothes Website project. This document outlines the guidelines and expectations for contributing to our project. By following these guidelines, you'll be able to help us build a high-quality, maintainable, and scalable project.
+# Contributing to Car Website
+Thank you for considering contributing to the Car Website project. This document outlines the guidelines and expectations for contributing to the project.
 
 ## Getting Started
-To start contributing, follow these steps:
+To contribute to the Car Website project, follow these steps:
 
-1. **Fork the repository**: Go to the [Clothes Website repository](https://github.com/your-username/clothes-website) and click the "Fork" button in the top-right corner. This will create a copy of the repository in your own GitHub account.
-2. **Clone the repository**: Run the command `git clone https://github.com/your-username/clothes-website.git` to download a copy of the repository to your local machine.
-3. **Install dependencies**: Run the command `npm install` or `yarn install` to install the required dependencies.
+1. **Fork the repository**: Navigate to the [Car Website repository](https://github.com/your-username/Car-Website) and click the "Fork" button in the top-right corner. This will create a copy of the repository in your own GitHub account.
+2. **Clone the repository**: Run the following command in your terminal to clone the forked repository:
+   ```bash
+git clone https://github.com/your-username/Car-Website.git
+```
+3. **Navigate to the repository**: Change into the cloned repository:
+   ```bash
+cd Car-Website
+```
 
 ## Branching
-When working on a new feature or bug fix, create a new branch from the `main` branch. Use the following naming convention for your branch:
+When making changes, create a new branch to work on. Branch names should follow the format:
+```
+[type]/[brief-description]
+```
+Where `[type]` is one of:
 
-* `feature/your-feature-name` for new features
-* `fix/your-bug-fix-name` for bug fixes
-* `docs/your-documentation-change` for documentation changes
-* `chore/your-chore-name` for miscellaneous changes
+* `feature` for new features
+* `fix` for bug fixes
+* `docs` for documentation changes
+* `style` for code style changes
+* `refactor` for code refactoring
+* `test` for test additions or changes
+* `chore` for miscellaneous changes
+
+And `[brief-description]` is a short description of the changes.
+
+Example branch names:
+```
+feature/project-specification-generation
+fix/repository-scaffolding-bug
+docs/update-readme
+```
 
 ## Pull Requests
-When you're ready to submit your changes, create a pull request against the `main` branch. Here are some expectations for pull requests:
+When submitting a pull request, please ensure that:
 
-* **Clear and concise title**: Use a descriptive title that summarizes the changes made in the pull request.
-* **Detailed description**: Provide a detailed description of the changes made, including any relevant context or explanations.
-* **Related issues**: If the pull request fixes a specific issue, include a reference to the issue number in the description.
-* **Code formatting**: Ensure that the code is formatted consistently and adheres to our code style expectations (see below).
-* **Testing**: Include tests for any new functionality or bug fixes.
+* The branch is based on the latest `main` branch
+* The changes are concise and focused on a single feature or bug fix
+* The code is formatted according to the project's code style guidelines (see below)
+* The pull request includes a clear and concise description of the changes
+* The pull request includes any relevant screenshots or examples
 
-## Code Style Expectations
-We follow standard JavaScript and HTML/CSS coding conventions. Here are some specific guidelines:
+## Code Style
+The Car Website project follows the standard coding conventions for the languages used in the project. Please ensure that your code adheres to the following guidelines:
 
-* **Indentation**: Use 2 spaces for indentation.
-* **Line length**: Keep lines to a maximum of 80 characters.
-* **Variable naming**: Use camelCase for variable names.
-* **Function naming**: Use PascalCase for function names.
-* **Code organization**: Keep related code organized into logical modules or files.
+* Use 4 spaces for indentation
+* Use consistent naming conventions (e.g., camelCase for JavaScript)
+* Keep lines to a maximum of 80 characters
+* Use blank lines to separate logical sections of code
+* Use comments to explain complex code sections
 
 ## Issue Reporting
-If you encounter a bug or have a feature request, please create an issue in our [issue tracker](https://github.com/your-username/clothes-website/issues). Here are some guidelines for issue reporting:
+When reporting an issue, please provide the following information:
 
-* **Clear and concise title**: Use a descriptive title that summarizes the issue or feature request.
-* **Detailed description**: Provide a detailed description of the issue or feature request, including any relevant context or explanations.
-* **Reproduction steps**: If the issue is a bug, provide step-by-step instructions for reproducing the issue.
-* **Expected behavior**: Describe the expected behavior or outcome.
-* **Actual behavior**: Describe the actual behavior or outcome.
+* A clear and concise description of the issue
+* Steps to reproduce the issue
+* Any relevant error messages or logs
+* The version of the Car Website project being used
+* Any relevant screenshots or examples
 
-## Core Features
-The Clothes Website project has the following core features:
-* **Project specification generation**: The project includes a feature to generate project specifications.
-* **Repository scaffolding**: The project includes a feature to scaffold a repository.
-* **Documentation drafting**: The project includes a feature to draft documentation.
-* **GitHub workflow setup**: The project includes a feature to set up a GitHub workflow.
+You can report issues by creating a new issue on the [Car Website issue tracker](https://github.com/your-username/Car-Website/issues).
 
-## Additional Resources
-For more information on contributing to the Clothes Website project, please see our [README.md](README.md) file.
+## Code of Conduct
+The Car Website project follows the standard open-source code of conduct. Please be respectful and considerate in your interactions with other contributors and users.
 
-## License
-By contributing to the Clothes Website project, you agree to license your contributions under the [MIT License](LICENSE).
-
-Thank you for your contributions to the Clothes Website project!
+By following these guidelines, you can help ensure that the Car Website project remains a positive and productive community for everyone involved. Thank you for your contributions!
