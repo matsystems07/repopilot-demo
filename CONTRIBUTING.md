@@ -1,6 +1,6 @@
-# Contributing to Timeout 30
+# Contributing to Bike Startup
 
-Thank you for your interest in contributing to **Timeout 30**! 🎉
+Thank you for your interest in contributing to **Bike Startup**! 🎉
 
 We welcome contributions from developers of all skill levels and backgrounds. This document provides guidelines and information to help you get started with contributing to our project.
 
@@ -41,8 +41,8 @@ Before you begin, ensure you have the following installed:
 2. Clone your fork locally:
 
 ```bash
-git clone https://github.com/your-username/timeout-30.git
-cd timeout-30
+git clone https://github.com/your-username/bike-startup.git
+cd bike-startup
 ```
 
 3. Set up the development environment:
@@ -63,7 +63,7 @@ pip install -r requirements-dev.txt
 
 ### 1. Choose an Issue
 
-- Check [GitHub Issues](https://github.com/username/timeout-30/issues) for open tasks
+- Check [GitHub Issues](https://github.com/username/bike-startup/issues) for open tasks
 - Look for issues labeled `good first issue` or `help wanted`
 - Comment on the issue to indicate you're working on it
 
@@ -336,4 +336,4 @@ Describe the tests you ran and how to reproduce.
 
 Contributors are recognized in our README.md and at project events. We believe in celebrating all contributions, big and small!
 
-Thank you for contributing to Timeout 30! 🚀
+Thank you for contributing to Bike Startup! 🚀
