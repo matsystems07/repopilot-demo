@@ -1,8 +1,8 @@
-# Timeout 30
+# Bike Startup
 
 ## 🎯 Overview
 
-A system to help launch and manage the open-source project 'timeout 30'.
+A system to help launch and manage the open-source project 'bike startup'.
 
 This project addresses key challenges in developers, maintainers, contributors by providing a comprehensive solution with enterprise-grade features and developer-friendly tooling.
 
@@ -51,7 +51,7 @@ This project addresses key challenges in developers, maintainers, contributors b
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd timeout-30
+cd bike-startup
 
 # Create virtual environment
 python -m venv venv
@@ -64,10 +64,10 @@ pip install -r requirements.txt
 ### Basic Usage
 
 ```python
-from timeout_30 import Timeout30App
+from bike_startup import BikeStartupApp
 
 # Initialize the application
-app = Timeout30App()
+app = BikeStartupApp()
 
 # Run the application
 app.run()
@@ -79,7 +79,7 @@ Create a `.env` file in the project root:
 
 ```env
 # Application Settings
-APP_NAME=Timeout 30
+APP_NAME=Bike Startup
 APP_VERSION=1.0.0
 DEBUG=true
 
@@ -95,7 +95,7 @@ API_KEY=your-api-key-here
 ### Basic Operations
 ```python
 # Example: Core feature demonstration
-app = Timeout30App()
+app = BikeStartupApp()
 app.initialize()
 app.demonstrate_features()
 ```
