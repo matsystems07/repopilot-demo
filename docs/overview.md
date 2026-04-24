@@ -1,10 +1,10 @@
 # Project Overview
 
 ## Project
-Car Company Website
+Shoe Shop
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'car company website'.
+A system to help launch and manage the open-source project 'shoe shop'.
 
 ## Core Features
 - Project specification generation
