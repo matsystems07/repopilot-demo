@@ -1,151 +1,140 @@
 ```python
+# main.py
+
 # Import required libraries
 import os
 import sys
-from datetime import datetime
+import requests
+from flask import Flask, render_template, request
+from flask_cors import CORS
 from github import Github
-from github import InputFileContent
+from datetime import datetime
 
-# Define constants
-GITHUB_TOKEN = "your_github_token"
-GITHUB_USERNAME = "your_github_username"
-REPO_NAME = "car-website-honda-pakistan"
+# Create a Flask application instance
+app = Flask(__name__)
+CORS(app)
+
+# Define a dictionary to store Toyota car models sold in Pakistan
+toyota_cars = {
+    "Corolla": {"price": "3,500,000 - 4,500,000 PKR", "description": "A compact sedan"},
+    "Camry": {"price": "5,000,000 - 6,500,000 PKR", "description": "A mid-size sedan"},
+    "Hilux": {"price": "3,000,000 - 4,000,000 PKR", "description": "A pickup truck"},
+    "Fortuner": {"price": "5,500,000 - 7,000,000 PKR", "description": "A mid-size SUV"},
+    "Prius": {"price": "4,000,000 - 5,000,000 PKR", "description": "A hybrid compact car"},
+}
 
 # Define a function to generate project specification
 def generate_project_specification():
     """
-    Generates a project specification for the car website.
+    Generate project specification for the car website.
     """
-    specification = f"""
-# Car Website Project Specification
-
-## Overview
-The car website is an open-source project that aims to display all Honda cars sold in Pakistan.
-
-## Features
-- Display a list of all Honda cars sold in Pakistan
-- Provide details of each car, including model, year, price, and features
-- Allow users to filter cars by model, year, and price
-
-## Requirements
-- Python 3.8+
-- Flask 2.0+
-- GitHub repository for version control
-
-## Timeline
-- Week 1: Set up GitHub repository and project scaffolding
-- Week 2-3: Develop the car website using Flask
-- Week 4: Test and deploy the website
-"""
+    specification = {
+        "Project Name": "Car Website",
+        "Description": "A website showing all Toyota cars sold in Pakistan",
+        "Features": ["Display Toyota car models", "Display car prices", "Display car descriptions"],
+        "Target Users": ["Developers", "Maintainers", "Contributors"],
+    }
     return specification
 
-# Define a function to scaffold the repository
+# Define a function to scaffold a repository
 def scaffold_repository():
     """
-    Scaffolds the GitHub repository for the car website project.
+    Scaffold a repository for the car website.
     """
-    # Create a new GitHub repository
-    g = Github(GITHUB_TOKEN)
-    user = g.get_user(GITHUB_USERNAME)
-    repo = user.create_repo(REPO_NAME, description="Car website showing all Honda cars sold in Pakistan")
+    # Create a new repository on GitHub
+    g = Github("your-github-token")
+    user = g.get_user()
+    repo = user.create_repo("car-website", description="A website showing all Toyota cars sold in Pakistan")
 
-    # Create a new branch for the project
-    repo.create_git_ref(ref="refs/heads/development", sha=repo.get_branch("main").commit.sha)
+    # Create a new branch
+    repo.create_git_ref(ref="refs/heads/feature/new-feature", sha=repo.get_branch("main").commit.sha)
 
-    # Create a new file for the project specification
-    spec_file = InputFileContent(content=generate_project_specification())
-    repo.create_file(path="PROJECT_SPECIFICATION.md", message="Initial project specification", content=spec_file, branch="development")
+    # Create a new file
+    repo.create_file("README.md", "Initial commit", "# Car Website\nA website showing all Toyota cars sold in Pakistan", branch="feature/new-feature")
 
 # Define a function to draft documentation
 def draft_documentation():
     """
-    Drafts documentation for the car website project.
+    Draft documentation for the car website.
     """
-    documentation = f"""
-# Car Website Documentation
-
-## Introduction
-The car website is an open-source project that aims to display all Honda cars sold in Pakistan.
-
-## Getting Started
-1. Clone the repository: `git clone https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the application: `python main.py`
-
-## API Endpoints
-- `/cars`: Returns a list of all Honda cars sold in Pakistan
-- `/cars/{model}`: Returns details of a specific car model
-"""
+    documentation = {
+        "Introduction": "This is a website showing all Toyota cars sold in Pakistan.",
+        "Features": ["Display Toyota car models", "Display car prices", "Display car descriptions"],
+        "Usage": ["Open the website in a web browser", "Select a car model to view its details"],
+    }
     return documentation
 
 # Define a function to set up GitHub workflow
 def setup_github_workflow():
     """
-    Sets up a GitHub workflow for the car website project.
+    Set up GitHub workflow for the car website.
     """
-    # Create a new file for the GitHub workflow
-    workflow_file = InputFileContent(content="""
-name: Car Website Workflow
-
+    # Create a new workflow file
+    workflow_file = """
+name: Build and deploy
 on:
   push:
     branches:
       - main
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run application
-        run: python main.py
-""")
-    repo = Github(GITHUB_TOKEN).get_repo(f"{GITHUB_USERNAME}/{REPO_NAME}")
-    repo.create_file(path=".github/workflows/main.yml", message="Initial GitHub workflow", content=workflow_file, branch="development")
+        run: |
+          pip install -r requirements.txt
+      - name: Build and deploy
+        run: |
+          python main.py
+    """
+    with open(".github/workflows/main.yml", "w") as f:
+        f.write(workflow_file)
 
-# Define the main application logic
-def main():
-    print("Car Website Project")
-    print("--------------------")
-    print("1. Generate project specification")
-    print("2. Scaffold repository")
-    print("3. Draft documentation")
-    print("4. Set up GitHub workflow")
-    print("5. Exit")
-    
-    while True:
-        choice = input("Enter your choice: ")
-        
-        if choice == "1":
-            print(generate_project_specification())
-        elif choice == "2":
-            scaffold_repository()
-            print("Repository scaffolded successfully!")
-        elif choice == "3":
-            print(draft_documentation())
-        elif choice == "4":
-            setup_github_workflow()
-            print("GitHub workflow set up successfully!")
-        elif choice == "5":
-            break
-        else:
-            print("Invalid choice. Please try again.")
+# Define a route for the home page
+@app.route("/")
+def home():
+    """
+    Display the home page.
+    """
+    return render_template("index.html", toyota_cars=toyota_cars)
 
-if __name__ == "__main__":
-    main()
-```
+# Define a route for the car details page
+@app.route("/car/<car_model>")
+def car_details(car_model):
+    """
+    Display the car details page.
+    """
+    car = toyota_cars.get(car_model)
+    if car:
+        return render_template("car_details.html", car_model=car_model, car=car)
+    else:
+        return "Car not found", 404
 
-**Note:** You need to replace `"your_github_token"` and `"your_github_username"` with your actual GitHub token and username.
+# Define a route for the project specification page
+@app.route("/project-specification")
+def project_specification():
+    """
+    Display the project specification page.
+    """
+    specification = generate_project_specification()
+    return render_template("project_specification.html", specification=specification)
 
-**Example Use Case:**
+# Define a route for the repository scaffolding page
+@app.route("/scaffold-repository")
+def scaffold_repository_page():
+    """
+    Scaffold a repository for the car website.
+    """
+    scaffold_repository()
+    return "Repository scaffolded successfully"
 
-1. Run the application: `python main.py`
-2. Choose an option from the menu:
-	* Generate project specification: `1`
-	* Scaffold repository: `2`
-	* Draft documentation: `3`
-	* Set up GitHub workflow: `4`
-	* Exit: `
+# Define a route for the documentation drafting page
+@app.route("/draft-documentation")
+def draft_documentation_page():
+    """
+    Draft documentation for the car website.
+    """
+    documentation = draft_documentation()
+    return render_template
