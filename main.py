@@ -1,174 +1,151 @@
+```python
+# Import required libraries
 import os
-from typing import List, Dict, Optional
-import json
+import sys
 from datetime import datetime
+from github import Github
+from github import InputFileContent
 
-class BikeStartupApp:
-    """Bike Startup - A system to help launch and manage the open-source project 'bike startup'.
+# Define constants
+GITHUB_TOKEN = "your_github_token"
+GITHUB_USERNAME = "your_github_username"
+REPO_NAME = "car-website-honda-pakistan"
 
-    Core Features:
-    - Project specification generation
-    - Repository scaffolding
-    - Documentation drafting
-    - GitHub workflow setup
-
-    Target Users:
-    - developers
-    - maintainers
-    - contributors
+# Define a function to generate project specification
+def generate_project_specification():
     """
+    Generates a project specification for the car website.
+    """
+    specification = f"""
+# Car Website Project Specification
 
-    def __init__(self):
-        self.project_name = "Bike Startup"
-        self.version = "1.0.0"
-        self.core_features = ['Project specification generation', 'Repository scaffolding', 'Documentation drafting', 'GitHub workflow setup']
-        self.target_users = ['developers', 'maintainers', 'contributors']
-        self.repo_goals = ['Clear onboarding', 'Reusable starter structure', 'Contributor-friendly workflow']
-        self.created_at = datetime.now().isoformat()
+## Overview
+The car website is an open-source project that aims to display all Honda cars sold in Pakistan.
 
-    def initialize(self) -> bool:
-        """Initialize the application with core setup"""
-        print(f"Initializing {self.project_name} v{self.version}")
-        print(f"Created: {self.created_at}")
-        return True
+## Features
+- Display a list of all Honda cars sold in Pakistan
+- Provide details of each car, including model, year, price, and features
+- Allow users to filter cars by model, year, and price
 
-    def show_welcome(self) -> None:
-        """Display welcome message and project information"""
-        print(f"\n==================================================")
-        print(f"Welcome to {self.project_name}!")
-        print(f"==================================================")
-        print(f"\nProblem Solved: A system to help launch and manage the open-source project 'bike startup'.")
-        print(f"\nCore Features:")
-        for feature in self.core_features:
-            print(f"  ✓ {feature}")
+## Requirements
+- Python 3.8+
+- Flask 2.0+
+- GitHub repository for version control
 
-        print(f"\nTarget Users:")
-        for user in self.target_users:
-            print(f"  • {user}")
+## Timeline
+- Week 1: Set up GitHub repository and project scaffolding
+- Week 2-3: Develop the car website using Flask
+- Week 4: Test and deploy the website
+"""
+    return specification
 
-    def demonstrate_features(self) -> None:
-        """Demonstrate each core feature with working examples"""
-        print(f"\n============================== FEATURE DEMONSTRATION ==============================")
+# Define a function to scaffold the repository
+def scaffold_repository():
+    """
+    Scaffolds the GitHub repository for the car website project.
+    """
+    # Create a new GitHub repository
+    g = Github(GITHUB_TOKEN)
+    user = g.get_user(GITHUB_USERNAME)
+    repo = user.create_repo(REPO_NAME, description="Car website showing all Honda cars sold in Pakistan")
 
-        for i, feature in enumerate(self.core_features, 1):
-            print(f"\n{i}. {feature}")
-            print(f"   Status: {'Implemented' if len(feature) > 10 else 'Ready for development'}")
+    # Create a new branch for the project
+    repo.create_git_ref(ref="refs/heads/development", sha=repo.get_branch("main").commit.sha)
 
-            # Provide specific demonstrations based on feature type
-            if 'web' in feature.lower() or 'site' in feature.lower():
-                self._demo_web_feature(feature)
-            elif 'api' in feature.lower() or 'data' in feature.lower():
-                self._demo_api_feature(feature)
-            elif 'user' in feature.lower() or 'auth' in feature.lower():
-                self._demo_user_feature(feature)
-            elif 'search' in feature.lower():
-                self._demo_search_feature(feature)
-            else:
-                self._demo_generic_feature(feature)
+    # Create a new file for the project specification
+    spec_file = InputFileContent(content=generate_project_specification())
+    repo.create_file(path="PROJECT_SPECIFICATION.md", message="Initial project specification", content=spec_file, branch="development")
 
-    def _demo_web_feature(self, feature: str) -> None:
-        """Demonstrate web-related features"""
-        print(f"   🌐 Web Interface: Ready for {feature.lower()}")
-        print("   - Responsive design templates prepared")
-        print("   - Modern UI components configured")
+# Define a function to draft documentation
+def draft_documentation():
+    """
+    Drafts documentation for the car website project.
+    """
+    documentation = f"""
+# Car Website Documentation
 
-    def _demo_api_feature(self, feature: str) -> None:
-        """Demonstrate API/data features"""
-        print(f"   🔌 API Endpoints: {feature.lower()} endpoints defined")
-        print("   - RESTful API structure implemented")
-        print("   - Data models and schemas ready")
+## Introduction
+The car website is an open-source project that aims to display all Honda cars sold in Pakistan.
 
-    def _demo_user_feature(self, feature: str) -> None:
-        """Demonstrate user-related features"""
-        print(f"   👥 User Management: {feature.lower()} system ready")
-        print("   - User profiles and authentication prepared")
-        print("   - Role-based access control configured")
+## Getting Started
+1. Clone the repository: `git clone https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the application: `python main.py`
 
-    def _demo_search_feature(self, feature: str) -> None:
-        """Demonstrate search features"""
-        print(f"   🔍 Search Engine: {feature.lower()} functionality implemented")
-        print("   - Full-text search capabilities")
-        print("   - Advanced filtering options")
+## API Endpoints
+- `/cars`: Returns a list of all Honda cars sold in Pakistan
+- `/cars/{model}`: Returns details of a specific car model
+"""
+    return documentation
 
-    def _demo_generic_feature(self, feature: str) -> None:
-        """Demonstrate generic features"""
-        print(f"   ⚡ Feature: {feature.lower()} module ready")
-        print("   - Core logic implemented")
-        print("   - Integration points prepared")
+# Define a function to set up GitHub workflow
+def setup_github_workflow():
+    """
+    Sets up a GitHub workflow for the car website project.
+    """
+    # Create a new file for the GitHub workflow
+    workflow_file = InputFileContent(content="""
+name: Car Website Workflow
 
-    def show_roadmap(self) -> None:
-        """Display project roadmap and next steps"""
-        roadmap = ['Scaffold repository', 'Generate docs', 'Create GitHub issues', 'Review and revise outputs']
-        if roadmap:
-            print(f"\n============================== PROJECT ROADMAP ==============================")
-            for i, item in enumerate(roadmap, 1):
-                print(f"{i}. {item}")
-        else:
-            print(f"\n📋 Next Development Steps:")
-            print("   - Complete core feature implementation")
-            print("   - Add comprehensive testing")
-            print("   - Deploy to production environment")
+on:
+  push:
+    branches:
+      - main
 
-    def get_system_info(self) -> Dict[str, any]:
-        """Get system information and status"""
-        return {
-            "project": self.project_name,
-            "version": self.version,
-            "features_count": len(self.core_features),
-            "target_users": len(self.target_users),
-            "status": "operational",
-            "created": self.created_at
-        }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run application
+        run: python main.py
+""")
+    repo = Github(GITHUB_TOKEN).get_repo(f"{GITHUB_USERNAME}/{REPO_NAME}")
+    repo.create_file(path=".github/workflows/main.yml", message="Initial GitHub workflow", content=workflow_file, branch="development")
 
-    def run_diagnostics(self) -> bool:
-        """Run system diagnostics"""
-        print("\n🔧 Running System Diagnostics...")
-        checks = [
-            ("Core features", len(self.core_features) > 0),
-            ("Target users defined", len(self.target_users) > 0),
-            ("Project initialized", True),
-            ("System operational", True)
-        ]
-
-        all_passed = True
-        for check_name, passed in checks:
-            status = "✅ PASS" if passed else "❌ FAIL"
-            print(f"   {check_name}: {status}")
-            if not passed:
-                all_passed = False
-
-        print(f"\nOverall Status: {'All systems operational' if all_passed else 'Some issues detected'}")
-        return all_passed
-
-    def run(self) -> None:
-        """Main application entry point"""
-        try:
-            if not self.initialize():
-                print("❌ Initialization failed!")
-                return
-
-            self.show_welcome()
-            self.demonstrate_features()
-            self.show_roadmap()
-
-            # Run diagnostics
-            self.run_diagnostics()
-
-            print(f"\n🎉 {self.project_name} is ready for development!")
-            print("\n💡 Next Steps:")
-            print("   1. Review the generated code structure")
-            print("   2. Implement specific business logic")
-            print("   3. Add comprehensive tests")
-            print("   4. Deploy and monitor")
-
-        except Exception as e:
-            print(f"❌ Error running application: {e}")
-            return False
-
+# Define the main application logic
 def main():
-    """Main entry point"""
-    app = BikeStartupApp()
-    app.run()
+    print("Car Website Project")
+    print("--------------------")
+    print("1. Generate project specification")
+    print("2. Scaffold repository")
+    print("3. Draft documentation")
+    print("4. Set up GitHub workflow")
+    print("5. Exit")
+    
+    while True:
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            print(generate_project_specification())
+        elif choice == "2":
+            scaffold_repository()
+            print("Repository scaffolded successfully!")
+        elif choice == "3":
+            print(draft_documentation())
+        elif choice == "4":
+            setup_github_workflow()
+            print("GitHub workflow set up successfully!")
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
+```
+
+**Note:** You need to replace `"your_github_token"` and `"your_github_username"` with your actual GitHub token and username.
+
+**Example Use Case:**
+
+1. Run the application: `python main.py`
+2. Choose an option from the menu:
+	* Generate project specification: `1`
+	* Scaffold repository: `2`
+	* Draft documentation: `3`
+	* Set up GitHub workflow: `4`
+	* Exit: `
