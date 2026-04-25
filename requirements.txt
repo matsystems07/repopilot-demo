@@ -1,16 +1,19 @@
 Based on the provided code, the following Python packages need to be installed:
 
-1. `PyGithub` (for interacting with the GitHub API)
-2. `python-dateutil` is not required as `datetime` is a built-in module.
-
-Here's an example `requirements.txt` file with the necessary dependencies:
-
 ```
+Flask==2.2.2
+Flask-CORS==3.0.10
 PyGithub==1.55
+requests==2.28.1
 ```
 
-Please note that the version of `PyGithub` may vary depending on your specific requirements and the version of Python you are using. You can install the packages using pip:
+Note: The `os`, `sys`, and `datetime` modules are part of the Python Standard Library, so they do not need to be installed separately.
 
-```bash
-pip install -r requirements.txt
+Here is the `requirements.txt` file:
+
+```
+Flask==2.2.2
+Flask-CORS==3.0.10
+PyGithub==1.55
+requests==2.28.1
 ```
