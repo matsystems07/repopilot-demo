@@ -1,19 +1,22 @@
 Based on the provided code, the following Python packages need to be installed:
 
-```
-Flask==2.2.2
-Flask-CORS==3.0.10
-PyGithub==1.55
-requests==2.28.1
-```
+* None, as the code only uses built-in Python modules and the `gh` command-line tool, which is not a Python package.
 
-Note: The `os`, `sys`, and `datetime` modules are part of the Python Standard Library, so they do not need to be installed separately.
+However, the `argparse` module is used, but it is a built-in module in Python, so it does not need to be installed separately.
 
-Here is the `requirements.txt` file:
-
+The `gh` command-line tool is used, but it is not a Python package. It needs to be installed separately using the following command:
+```bash
+brew install gh
 ```
-Flask==2.2.2
-Flask-CORS==3.0.10
-PyGithub==1.55
-requests==2.28.1
+or
+```bash
+sudo apt-get install gh
+```
+If you want to create a `requirements.txt` file, it would be empty, as there are no external Python packages required:
+```bash
+echo "" > requirements.txt
+```
+Alternatively, you can add a comment to the `requirements.txt` file to indicate that no external packages are required:
+```bash
+echo "# No external packages required" > requirements.txt
 ```
