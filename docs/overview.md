@@ -1,13 +1,14 @@
 # Project Overview
 
 ## Project
-Open-Source Project Launch System
+Shoes Shop Startup
 
 ## Problem Statement
-Lack of standardized tools and processes for launching and managing open-source projects
+Current shoe shopping platforms lack user-friendly interfaces, personalized product recommendations, and seamless checkout processes
 
 ## Core Features
-- repository scaffolding
-- documentation generation
-- GitHub setup
-- issue planning
+- user authentication and profiles
+- product catalog with filtering and sorting
+- personalized product recommendations
+- shopping cart and checkout system
+- order management and tracking
