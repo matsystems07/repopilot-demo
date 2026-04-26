@@ -1,13 +1,13 @@
 # Project Overview
 
 ## Project
-Car Webssitee Showing All Toyota Cars Sold In Pakistan
+Open-Source Project Launch System
 
 ## Problem Statement
-A system to help launch and manage the open-source project 'car webssitee showing all toyota cars sold in pakistan'.
+Lack of standardized tools and processes for launching and managing open-source projects
 
 ## Core Features
-- Project specification generation
-- Repository scaffolding
-- Documentation drafting
-- GitHub workflow setup
+- repository scaffolding
+- documentation generation
+- GitHub setup
+- issue planning
