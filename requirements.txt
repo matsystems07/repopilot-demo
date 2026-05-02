@@ -1,19 +1,25 @@
-Based on the provided code, the following Python packages need to be installed:
+To run this application, you will need to have the following packages installed:
 
-```
-tkinter==8.6
-```
+* `flask`: This is the only package that is explicitly imported in the code.
 
-However, since `tkinter` is a built-in Python library, it does not need to be installed separately. It comes pre-installed with most Python installations.
-
-If you want to create a `requirements.txt` file, you can simply leave it empty or add a comment to indicate that no external packages are required:
-
+You can install it using pip:
+```bash
+pip install flask
 ```
-# No external packages required
-```
+The version of Flask is not specified in the code, so you can install the latest version available.
 
-Alternatively, you can specify the Python version required to run the code:
+Here is the `requirements.txt` file with the necessary dependencies:
+```
+flask
+```
+Alternatively, you can specify a version of Flask, for example:
+```
+flask==2.2.2
+```
+Note that the `json` library is not included in the `requirements.txt` file because it is a built-in Python library and does not need to be installed separately.
 
-```
-# Python 3.8+
-```
+Also, make sure to create the necessary HTML templates in a `templates` folder:
+* `index.html`: The home page with donut catalog
+* `donut_details.html`: The donut details page with ingredients and nutritional information
+* `about.html`: The about page with Crusteez story and mission
+* `contact.html`: The contact page with store locations and hours
