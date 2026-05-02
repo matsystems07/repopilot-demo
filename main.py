@@ -1,147 +1,112 @@
 ```python
 # Import required libraries
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-from flask_bcrypt import Bcrypt
-from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
-from flask_cors import CORS
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
 
-# Create the Flask application
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shoes_shop.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['JWT_SECRET_KEY'] = 'super-secret'
-
-# Initialize the database, marshmallow, bcrypt, and JWTManager
-db = SQLAlchemy(app)
-ma = Marshmallow(app)
-bcrypt = Bcrypt(app)
-jwt = JWTManager(app)
-CORS(app)
-
-# Define the User model
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
-    role = db.Column(db.String(100), nullable=False)
-
-    def __init__(self, username, password, role):
-        self.username = username
-        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
-        self.role = role
-
-# Define the Product model
-class Product(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    price = db.Column(db.Float, nullable=False)
-    description = db.Column(db.String(200), nullable=False)
-
-    def __init__(self, name, price, description):
+# Define a class for Suzuki car models
+class SuzukiCar:
+    def __init__(self, name, price, engine, transmission, fuel_type):
         self.name = name
         self.price = price
-        self.description = description
+        self.engine = engine
+        self.transmission = transmission
+        self.fuel_type = fuel_type
 
-# Define the Order model
-class Order(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
-    status = db.Column(db.String(100), nullable=False)
+# Define a class for the Suzuki car catalog
+class SuzukiCarCatalog:
+    def __init__(self):
+        self.cars = [
+            SuzukiCar("Suzuki Alto", 1500000, "660cc", "Manual", "Petrol"),
+            SuzukiCar("Suzuki WagonR", 1800000, "1000cc", "Manual", "Petrol"),
+            SuzukiCar("Suzuki Cultus", 2000000, "1000cc", "Manual", "Petrol"),
+            SuzukiCar("Suzuki Swift", 2500000, "1300cc", "Manual", "Petrol"),
+            SuzukiCar("Suzuki Baleno", 2800000, "1300cc", "Manual", "Petrol"),
+        ]
 
-    def __init__(self, user_id, product_id, status):
-        self.user_id = user_id
-        self.product_id = product_id
-        self.status = status
+    def get_cars(self):
+        return self.cars
 
-# Create the database tables
-with app.app_context():
-    db.create_all()
+    def search_cars(self, name):
+        return [car for car in self.cars if name.lower() in car.name.lower()]
 
-# Define the schema for the User model
-class UserSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = User
-        load_instance = True
+    def filter_cars(self, price):
+        return [car for car in self.cars if car.price <= price]
 
-# Define the schema for the Product model
-class ProductSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Product
-        load_instance = True
+# Define the main application class
+class SuzukiCarApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Suzuki Cars Pakistan")
+        self.catalog = SuzukiCarCatalog()
 
-# Define the schema for the Order model
-class OrderSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Order
-        load_instance = True
+        # Create tabs
+        self.notebook = ttk.Notebook(self.root)
+        self.notebook.pack(pady=10, expand=True)
 
-# Define the user authentication route
-@app.route('/login', methods=['POST'])
-def login():
-    """
-    User authentication route.
+        self.home_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.home_tab, text="Home")
 
-    :return: JSON response with access token or error message
-    """
-    username = request.json.get('username')
-    password = request.json.get('password')
-    user = User.query.filter_by(username=username).first()
-    if user and bcrypt.check_password_hash(user.password, password):
-        access_token = create_access_token(identity=username)
-        return jsonify(access_token=access_token)
-    return jsonify(error='Invalid username or password'), 401
+        self.search_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.search_tab, text="Search")
 
-# Define the user registration route
-@app.route('/register', methods=['POST'])
-def register():
-    """
-    User registration route.
+        self.filter_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.filter_tab, text="Filter")
 
-    :return: JSON response with success message or error message
-    """
-    username = request.json.get('username')
-    password = request.json.get('password')
-    role = request.json.get('role')
-    user = User.query.filter_by(username=username).first()
-    if user:
-        return jsonify(error='Username already exists'), 400
-    new_user = User(username, password, role)
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify(message='User created successfully')
+        self.dealership_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.dealership_tab, text="Dealership")
 
-# Define the product catalog route
-@app.route('/products', methods=['GET'])
-def get_products():
-    """
-    Product catalog route.
+        # Home tab
+        self.home_label = ttk.Label(self.home_tab, text="Welcome to Suzuki Cars Pakistan!")
+        self.home_label.pack(pady=10)
 
-    :return: JSON response with list of products
-    """
-    products = Product.query.all()
-    product_schema = ProductSchema(many=True)
-    return jsonify(product_schema.dump(products))
+        self.cars_button = ttk.Button(self.home_tab, text="View All Cars", command=self.view_cars)
+        self.cars_button.pack(pady=10)
 
-# Define the product filtering route
-@app.route('/products/filter', methods=['GET'])
-def filter_products():
-    """
-    Product filtering route.
+        # Search tab
+        self.search_label = ttk.Label(self.search_tab, text="Search for a car:")
+        self.search_label.pack(pady=10)
 
-    :return: JSON response with filtered list of products
-    """
-    name = request.args.get('name')
-    price = request.args.get('price')
-    products = Product.query
-    if name:
-        products = products.filter(Product.name.like(f'%{name}%'))
-    if price:
-        products = products.filter(Product.price <= float(price))
-    product_schema = ProductSchema(many=True)
-    return jsonify(product_schema.dump(products.all()))
+        self.search_entry = ttk.Entry(self.search_tab, width=30)
+        self.search_entry.pack(pady=10)
 
-# Define the shopping cart route
-@app.route('/cart',
+        self.search_button = ttk.Button(self.search_tab, text="Search", command=self.search_car)
+        self.search_button.pack(pady=10)
+
+        # Filter tab
+        self.filter_label = ttk.Label(self.filter_tab, text="Filter cars by price:")
+        self.filter_label.pack(pady=10)
+
+        self.filter_entry = ttk.Entry(self.filter_tab, width=30)
+        self.filter_entry.pack(pady=10)
+
+        self.filter_button = ttk.Button(self.filter_tab, text="Filter", command=self.filter_cars)
+        self.filter_button.pack(pady=10)
+
+        # Dealership tab
+        self.dealership_label = ttk.Label(self.dealership_tab, text="Dealership Information:")
+        self.dealership_label.pack(pady=10)
+
+        self.dealership_text = tk.Text(self.dealership_tab, height=10, width=40)
+        self.dealership_text.pack(pady=10)
+        self.dealership_text.insert(tk.END, "Contact us at 123-456-7890 or visit our website at suzuki.com.pk")
+
+    def view_cars(self):
+        # Create a new window to display all cars
+        cars_window = tk.Toplevel(self.root)
+        cars_window.title("All Cars")
+
+        # Create a text box to display car information
+        cars_text = tk.Text(cars_window, height=20, width=60)
+        cars_text.pack(pady=10)
+
+        # Get all cars from the catalog
+        cars = self.catalog.get_cars()
+
+        # Display each car's information
+        for car in cars:
+            cars_text.insert(tk.END, f"Name: {car.name}\n")
+            cars_text.insert(tk.END, f"Price: {car.price}\n")
+            cars_text.insert(tk.END, f"Engine: {car.engine}\n")
+            cars_text.insert(tk.END, f"Transmission: {car.transmission}\n")
+            cars
