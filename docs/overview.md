@@ -1,14 +1,14 @@
 # Project Overview
 
 ## Project
-Suzuki Cars Pakistan
+Crusteez Donut Website
 
 ## Problem Statement
-Lack of a centralized platform to view and compare all Suzuki car models available in Pakistan
+Crusteez lacks a centralized online platform to showcase their donut offerings, making it difficult for customers to explore and discover new donuts.
 
 ## Core Features
-- Car model catalog
-- Search and filter functionality
-- Detailed car specifications
-- Price comparison
-- Dealership information
+- donut catalog with images and descriptions
+- filtering and sorting options for donuts
+- donut details page with ingredients and nutritional information
+- about page with Crusteez story and mission
+- contact page with store locations and hours
