@@ -1,21 +1,19 @@
-Here's a list of Python packages that need to be installed along with their versions:
-
-1. Flask (`flask`)
-2. Flask-SQLAlchemy (`flask-sqlalchemy`)
-3. Flask-Marshmallow (`flask-marshmallow`)
-4. Flask-Bcrypt (`flask-bcrypt`)
-5. Flask-JWT-Extended (`flask-jwt-extended`)
-6. Flask-CORS (`flask-cors`)
-
-Here's a sample `requirements.txt` file:
+Based on the provided code, the following Python packages need to be installed:
 
 ```
-flask==2.2.2
-flask-sqlalchemy==2.5.1
-flask-marshmallow==0.14.0
-flask-bcrypt==1.0.1
-flask-jwt-extended==4.4.0
-flask-cors==3.0.10
+tkinter==8.6
 ```
 
-Note: The versions used in the `requirements.txt` file are examples and may need to be adjusted based on the specific requirements of your project. You can use `pip freeze` to get the versions of the packages that are currently installed in your environment.
+However, since `tkinter` is a built-in Python library, it does not need to be installed separately. It comes pre-installed with most Python installations.
+
+If you want to create a `requirements.txt` file, you can simply leave it empty or add a comment to indicate that no external packages are required:
+
+```
+# No external packages required
+```
+
+Alternatively, you can specify the Python version required to run the code:
+
+```
+# Python 3.8+
+```
