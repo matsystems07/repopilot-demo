@@ -1,63 +1,54 @@
-# Contributing to Crusteez Donut Website
-Thank you for considering contributing to the Crusteez Donut Website! We're excited to have you on board. This guide will walk you through the process of contributing to our project.
+# Contributing to Honda Car Catalog
+We welcome contributions to the Honda Car Catalog project. Your involvement will help us create a comprehensive and user-friendly car catalog for Honda enthusiasts. Below, you'll find guidelines on how to contribute to the project.
 
 ## Getting Started
-To start contributing, you'll need to fork and clone our repository. Here's a step-by-step guide:
+To start contributing, follow these steps:
 
-1. **Fork the repository**: Go to the [Crusteez Donut Website repository](https://github.com/crusteez/crusteez-donut-website) and click the "Fork" button in the top-right corner.
-2. **Clone the repository**: Run the following command in your terminal, replacing `your-username` with your actual GitHub username:
-   ```bash
-git clone https://github.com/your-username/crusteez-donut-website.git
-```
-3. **Navigate to the repository**: Change into the cloned repository:
-   ```bash
-cd crusteez-donut-website
-```
+1. **Fork the repository**: Go to the [Honda Car Catalog repository](https://github.com/your-username/honda-car-catalog) and click the "Fork" button. This will create a copy of the repository in your own GitHub account.
+2. **Clone the repository**: Run the command `git clone https://github.com/your-username/honda-car-catalog.git` to download the repository to your local machine.
+3. **Install dependencies**: Run `npm install` or `yarn install` to install the required dependencies.
 
 ## Branching
-When making changes, create a new branch to keep your work separate from the main codebase. We follow a simple branch naming convention:
+When making changes, create a new branch from the `main` branch. Use the following naming convention for your branch:
 
-* **Feature branches**: Use `feature/` followed by a brief description of the feature (e.g., `feature/add-donut-filtering`)
-* **Bug fix branches**: Use `fix/` followed by a brief description of the bug fix (e.g., `fix/donut-image-loading-issue`)
-* **Documentation branches**: Use `docs/` followed by a brief description of the documentation change (e.g., `docs/update-contributing-guidelines`)
+* `feature/<feature-name>` for new features
+* `fix/<issue-number>` for bug fixes
+* `docs/<documentation-change>` for documentation changes
+* `refactor/<code-change>` for code refactoring
 
-Create a new branch using the following command:
-```bash
-git checkout -b feature/your-branch-name
-```
-Replace `your-branch-name` with the actual name of your branch.
+Example: `feature/add-car-model-filter`
 
 ## Pull Requests
-When you're ready to submit your changes, create a pull request against the `main` branch. Here's what we expect from a pull request:
+When you're ready to submit your changes, create a pull request against the `main` branch. Here are some expectations for pull requests:
 
-* **Clear title**: Use a concise and descriptive title that summarizes the changes.
-* **Detailed description**: Provide a detailed description of the changes, including any relevant context or explanations.
-* **Related issues**: If your pull request fixes an issue, include the issue number in the description (e.g., "Fixes #123").
-* **Code formatting**: Ensure your code is formatted consistently with the rest of the project.
-
-To create a pull request, push your changes to your fork and then submit a pull request through the GitHub interface.
+* **Clear title**: Use a clear and descriptive title for your pull request.
+* **Description**: Provide a brief description of the changes you've made.
+* **Related issues**: If your pull request fixes an issue, mention the issue number in the description.
+* **Code changes**: Keep your code changes concise and focused on a single feature or fix.
+* **Tests**: Include tests for your changes, if applicable.
 
 ## Code Style
-We follow standard professional guidelines for code style. Here are some key expectations:
+We follow standard JavaScript and HTML/CSS coding conventions. Here are some specific guidelines:
 
 * **Indentation**: Use 2 spaces for indentation.
 * **Line length**: Keep lines under 80 characters.
-* **Variable naming**: Use descriptive and concise variable names.
-* **Function naming**: Use descriptive and concise function names.
-* **Commenting**: Use comments to explain complex logic or algorithms.
-
-We use [ESLint](https://eslint.org/) to enforce code style. You can run `npm run lint` to check your code for style issues.
+* **Variable naming**: Use camelCase for variable names.
+* **Function naming**: Use PascalCase for function names.
+* **Commenting**: Use JSDoc-style comments for functions and variables.
 
 ## Issue Reporting
-If you encounter an issue with the project, please report it using our issue tracker. Here's how:
+If you find a bug or have a feature request, please create an issue in the [issue tracker](https://github.com/your-username/honda-car-catalog/issues). Here are some guidelines for issue reporting:
 
-1. **Check existing issues**: Search the issue tracker to see if the issue has already been reported.
-2. **Create a new issue**: If the issue is not already reported, create a new issue with a clear and descriptive title.
-3. **Provide context**: Include any relevant context, such as:
-	* Steps to reproduce the issue
-	* Expected behavior
-	* Actual behavior
-	* Any error messages or logs
-4. **Label the issue**: Use the provided labels to categorize the issue (e.g., "bug", "feature request", etc.).
+* **Clear title**: Use a clear and descriptive title for your issue.
+* **Description**: Provide a detailed description of the issue or feature request.
+* **Steps to reproduce**: If applicable, provide steps to reproduce the issue.
+* **Expected behavior**: Describe the expected behavior or outcome.
+* **Screenshots or videos**: Attach screenshots or videos to help illustrate the issue.
 
-By following these guidelines, you'll help us maintain a high-quality and consistent codebase. Thank you again for contributing to the Crusteez Donut Website!
+## Code of Conduct
+We follow the standard open-source code of conduct. Be respectful, professional, and considerate in your interactions with other contributors and users.
+
+## License
+The Honda Car Catalog project is licensed under the [MIT License](https://opensource.org/licenses/MIT). By contributing to the project, you agree to release your contributions under this license.
+
+Thank you for contributing to the Honda Car Catalog project! Your involvement will help us create a high-quality and user-friendly car catalog for Honda enthusiasts.
