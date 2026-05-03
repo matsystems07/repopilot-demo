@@ -1,14 +1,14 @@
 # Project Overview
 
 ## Project
-Crusteez Donut Website
+Honda Car Catalog
 
 ## Problem Statement
-Crusteez lacks a centralized online platform to showcase their donut offerings, making it difficult for customers to explore and discover new donuts.
+There is no centralized online platform to view and compare all Honda car models
 
 ## Core Features
-- donut catalog with images and descriptions
-- filtering and sorting options for donuts
-- donut details page with ingredients and nutritional information
-- about page with Crusteez story and mission
-- contact page with store locations and hours
+- car model listing
+- filtering by year, model, and price
+- detailed car specifications
+- image gallery
+- user reviews and ratings
