@@ -1,132 +1,90 @@
+**CmdCalc: A Simple Command Line Calculator**
+=============================================
+
+### Overview
+
+CmdCalc is a simple command line calculator that supports basic arithmetic operations, trigonometric functions, exponential and logarithmic functions, and variables.
+
+### Code
+
 ```python
-# Import required libraries
-from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import secure_filename
-import os
+# main.py
 
-# Create a Flask application
-app = Flask(__name__)
+import math
+import re
 
-# Configure the application to use a SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///honda_cars.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Define a dictionary to store variables
+variables = {}
 
-# Create a SQLAlchemy object
-db = SQLAlchemy(app)
+def calculate(expression):
+    """
+    Evaluate a mathematical expression.
 
-# Define a Car model
-class Car(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    model = db.Column(db.String(100), nullable=False)
-    year = db.Column(db.Integer, nullable=False)
-    price = db.Column(db.Float, nullable=False)
-    specifications = db.Column(db.Text, nullable=False)
-    image = db.Column(db.String(100), nullable=False)
-    reviews = db.relationship('Review', backref='car', lazy=True)
+    Args:
+        expression (str): The mathematical expression to evaluate.
 
-# Define a Review model
-class Review(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    car_id = db.Column(db.Integer, db.ForeignKey('car.id'), nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
-    review = db.Column(db.Text, nullable=False)
+    Returns:
+        float: The result of the expression.
+    """
+    # Replace variables with their values
+    for var, value in variables.items():
+        expression = expression.replace(var, str(value))
 
-# Create the database tables
-with app.app_context():
-    db.create_all()
+    # Evaluate the expression
+    try:
+        result = eval(expression, {"math": math})
+        return result
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
 
-# Define a function to add a car to the database
-def add_car(model, year, price, specifications, image):
-    car = Car(model=model, year=year, price=price, specifications=specifications, image=image)
-    db.session.add(car)
-    db.session.commit()
+def main():
+    print("CmdCalc: A Simple Command Line Calculator")
+    print("----------------------------------------")
 
-# Define a function to add a review to the database
-def add_review(car_id, rating, review):
-    review = Review(car_id=car_id, rating=rating, review=review)
-    db.session.add(review)
-    db.session.commit()
+    while True:
+        # Get user input
+        user_input = input(">>> ")
 
-# Define a route for the home page
-@app.route('/')
-def home():
-    cars = Car.query.all()
-    return render_template('home.html', cars=cars)
+        # Check if the user wants to quit
+        if user_input.lower() == "quit":
+            break
 
-# Define a route for the car details page
-@app.route('/car/<int:car_id>')
-def car_details(car_id):
-    car = Car.query.get(car_id)
-    reviews = Review.query.filter_by(car_id=car_id).all()
-    return render_template('car_details.html', car=car, reviews=reviews)
+        # Check if the user wants to assign a variable
+        match = re.match(r"(\w+)\s*=\s*(.*)", user_input)
+        if match:
+            var_name = match.group(1)
+            var_value = match.group(2)
+            variables[var_name] = calculate(var_value)
+            print(f"Variable {var_name} assigned value {variables[var_name]}")
+            continue
 
-# Define a route for the add car page
-@app.route('/add_car', methods=['GET', 'POST'])
-def add_car_page():
-    if request.method == 'POST':
-        model = request.form['model']
-        year = int(request.form['year'])
-        price = float(request.form['price'])
-        specifications = request.form['specifications']
-        image = request.files['image']
-        image.save(os.path.join('static/images', secure_filename(image.filename)))
-        add_car(model, year, price, specifications, secure_filename(image.filename))
-        return redirect(url_for('home'))
-    return render_template('add_car.html')
+        # Evaluate the expression
+        result = calculate(user_input)
+        if result is not None:
+            print(f"Result: {result}")
 
-# Define a route for the add review page
-@app.route('/add_review/<int:car_id>', methods=['GET', 'POST'])
-def add_review_page(car_id):
-    if request.method == 'POST':
-        rating = int(request.form['rating'])
-        review = request.form['review']
-        add_review(car_id, rating, review)
-        return redirect(url_for('car_details', car_id=car_id))
-    return render_template('add_review.html')
-
-# Define a route for filtering cars by year
-@app.route('/filter_by_year/<int:year>')
-def filter_by_year(year):
-    cars = Car.query.filter_by(year=year).all()
-    return render_template('home.html', cars=cars)
-
-# Define a route for filtering cars by model
-@app.route('/filter_by_model/<string:model>')
-def filter_by_model(model):
-    cars = Car.query.filter_by(model=model).all()
-    return render_template('home.html', cars=cars)
-
-# Define a route for filtering cars by price
-@app.route('/filter_by_price/<float:price>')
-def filter_by_price(price):
-    cars = Car.query.filter_by(price=price).all()
-    return render_template('home.html', cars=cars)
-
-# Run the application
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    main()
 ```
 
-**templates/home.html**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Honda Car Catalog</title>
-</head>
-<body>
-    <h1>Honda Car Catalog</h1>
-    <ul>
-    {% for car in cars %}
-        <li>
-            <a href="{{ url_for('car_details', car_id=car.id) }}">{{ car.model }} ({{ car.year }})</a>
-        </li>
-    {% endfor %}
-    </ul>
-    <p><a href="{{ url_for('add_car_page') }}">Add a car</a></p>
-</body>
-</html>
-```
+### Usage
 
-**templates/car_details.html
+1. Run the script using Python: `python main.py`
+2. Enter a mathematical expression, such as `2 + 2` or `math.sin(3.14)`
+3. Use variables by assigning a value to a variable, such as `x = 5`
+4. Use the variable in an expression, such as `x * 2`
+5. Type `quit` to exit the calculator
+
+### Example Use Cases
+
+* Basic arithmetic: `2 + 2`, `5 * 3`, `10 / 2`
+* Trigonometric functions: `math.sin(3.14)`, `math.cos(0)`, `math.tan(3.14)`
+* Exponential and logarithmic functions: `math.exp(2)`, `math.log(10)`, `math.log10(100)`
+* Variables: `x = 5`, `y = x * 2`, `x + y`
+
+### Notes
+
+* The `calculate` function uses the `eval` function to evaluate the expression. This can pose a security risk if used with untrusted input.
+* The `variables` dictionary stores the values of assigned variables.
+* The `main` function runs the command line interface and handles user input.
