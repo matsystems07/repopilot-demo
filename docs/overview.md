@@ -1,14 +1,13 @@
 # Project Overview
 
 ## Project
-Honda Car Catalog
+CmdCalc
 
 ## Problem Statement
-There is no centralized online platform to view and compare all Honda car models
+Users need a simple and efficient way to perform mathematical calculations from the command line.
 
 ## Core Features
-- car model listing
-- filtering by year, model, and price
-- detailed car specifications
-- image gallery
-- user reviews and ratings
+- basic arithmetic operations
+- trigonometric functions
+- exponential and logarithmic functions
+- support for variables and expressions
